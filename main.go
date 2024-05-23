@@ -1,10 +1,11 @@
 package main
 
-import "fmt"
-import "github.com/google/go-github/v62/github"
+import (
+	"fmt"
+	"github.com/getsentry/sentry-go"
+)
 
 func main() {
-	client := github.NewClient(nil)
-
+	client := sentry.Init(sentry.ClientOptions{})
 	fmt.Printf("%+v\n", client)
 }
